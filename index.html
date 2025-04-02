@@ -9,7 +9,7 @@
     <style>
         @font-face {
             font-family: 'MapleMono';
-            src: url('font/MapleMono-Regular.woff2') format('woff2');
+            src: url('font/MapleMono-CN-Regular.ttf') format('woff2');
         }
 
         body {
@@ -27,13 +27,16 @@
             margin: 0 auto;
             margin-top: 20px;
             padding: 20px 20px 20px 20px;
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(0, 0, 0, 0.2); /* 提高透明度 */
             border-radius: 12px;
+            backdrop-filter: blur(10px); /* 添加模糊效果 */
+            -webkit-backdrop-filter: blur(10px); /* 兼容 WebKit 浏览器 */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
         }
 
         h1 {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 10px;
         }
 
         .grid {
@@ -114,12 +117,6 @@
         <h3 align="center">
             PGuide Studio Visual Identity System
         </h3>
-        <div class="social-icons">
-            <div class="social-icon">代码托管平台</div> <!-- Instagram 图标 -->
-            <div class="social-icon">项导对象存储</div> <!-- Facebook 图标 -->
-            <div class="social-icon">LaTeX协作平台</div> <!-- Twitter 图标 -->
-            <div class="social-icon">项导工作室官网</div> <!-- LinkedIn 图标 -->
-        </div>
         <div class="grid">
             <div class="grid-item">
                 <div class="icon-placeholder"></div>
@@ -151,7 +148,16 @@
                 <h3>版权所有</h3>
             </div>
         </div>
-
+        <div class="social-icons">
+            <div class="social-icon">代码托管平台</div>
+            <div class="social-icon">项导对象存储</div>
+            <div class="social-icon">LaTeX协作平台</div>
+            <div class="social-icon">项导工作室官网</div>
+            <div class="social-icon">项导文档</div>
+            <div class="social-icon">开源软件镜像站</div>
+            <div class="social-icon">容器镜像中心</div>
+            <div class="social-icon">云计算资源调度中心</div>
+        </div>
         <div class="footer">
             <!-- <p><span class="gradient-text">PGuide Studio</span> © 2023-2025</p> -->
             <p>PGuide Studio © 2023-2025</p>
