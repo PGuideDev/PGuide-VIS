@@ -26,8 +26,8 @@
             font-family: 'MapleMono', sans-serif;
             margin: 0;
             padding: 0;
-            color: rgb(255, 255, 255);
-            background-image: url('/assets/norway.jpg');
+            color: rgba(255, 255, 255, 0.8);
+            background-image: url('/assets/moon.jpg');
             background-size: cover;
             background-position: center;
         }
@@ -58,9 +58,9 @@
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(6, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 20px;
-            margin-buttom: 20px;
+
         }
 
         .grid-item {
@@ -109,7 +109,7 @@
         }
 
         .footer {
-            margin-top: 60px;
+            margin-top: 20px;
             text-align: center;
             position: fixed;
             bottom: 10px;
@@ -117,23 +117,6 @@
             transform: translateX(-50%);
             /* 居中对齐 */
             text-align: center;
-        }
-
-        .social-icons {
-            justify-content: center;
-            gap: 20px;
-            padding: 20px;
-            font-style: italic;
-            . flex: 1 1 calc(20% - 10px);
-
-            .social-icons {
-                position: fixed;
-                /* 固定位置 */
-                bottom: 20px;
-                /* 距离页面底部 20px */
-                right: 20px;
-                /* 距离页面右侧 20px */
-            }
         }
 
         .social-icon {
@@ -249,68 +232,65 @@
         <div class="grid">
             <div class="grid-item" onclick="openDetailPage('徽标规范')">
                 <div class="icon-placeholder icon-logo"></div>
-                <h4>徽标规范</h4>
+                <h3>徽标规范</h3>
             </div>
 
             <div class="grid-item" onclick="openDetailPage('标准字规范')">
                 <div class="icon-placeholder icon-text"></div>
-                <h4>标准字规范</h4>
+                <h3>标准字规范</h3>
             </div>
 
             <div class="grid-item" onclick="openDetailPage('色彩规范')">
                 <div class="icon-placeholder icon-color"></div>
-                <h4>色彩规范</h4>
+                <h3>色彩规范</h3>
             </div>
 
             <div class="grid-item" onclick="openDetailPage('徽标组合规范')">
                 <div class="icon-placeholder icon-combination"></div>
-                <h4>徽标组合规范</h4>
+                <h3>徽标组合规范</h3>
             </div>
             <div class="grid-item" onclick="openDetailPage('辅助图形规范')">
                 <div class="icon-placeholder icon-symbol"></div>
-                <h4>辅助图形规范</h4>
+                <h3>辅助图形规范</h3>
             </div>
             <div class="grid-item" onclick="openDetailPage('版权所有')">
                 <div class="icon-placeholder icon-copyright"></div>
-                <h4>版权所有</h4>
+                <h3>版权所有</h3>
             </div>
         </div>
         <!-- TODO: refactor this part -->
-<!-- 
-        <div class="social-icons">
-            <div class="social-icon" onclick="openInNewTab('https://zds.cqmu.edu.cn')">
-                <i class="fas fa-code"></i> 代码托管平台
-            </div>
-            <div class="social-icon" onclick="openInNewTab('https://storage.pguide.studio/oss')">
-                <i class="fas fa-cloud"></i> 项导对象存储
-            </div>
-            <div class="social-icon" onclick="openInNewTab('https://latex.cqmu.edu.cn')">
-                <i class="fas fa-file-alt"></i> LaTeX协作平台
-            </div>
-            <div class="social-icon" onclick="openInNewTab('https://www.pguide.studio')">
-                <i class="fas fa-globe"></i> 项导工作室官网
-            </div>
-            <div class="social-icon" onclick="openInNewTab('https://docs.pguide.studio')">
-                <i class="fas fa-book"></i> 项导文档
-            </div>
-            <div class="social-icon" onclick="openInNewTab('https://mirrors.cqmu.edu.cn')">
-                <i class="fas fa-server"></i> 开源软件镜像站
-            </div>
-            <div class="social-icon" onclick="openInNewTab('https://hub.pguide.studio/images')">
-                <i class="fa-brands fa-docker"></i> 容器镜像中心
-            </div>
-            <div class="social-icon" onclick="openInNewTab('https://cloud.pguide.studio/hpc')">
-                <i class="fas fa-cloud-upload-alt"></i> 云计算资源调度中心
-            </div>
-        </div> -->
+
+
 
 
         </script>
         <div class="footer" style="font-style: italic;">
+            <div class="social-icons">
+                <div class="social-icon" onclick="openInNewTab('https://git.cqmu.edu.cn')">
+                    <i class="fas fa-code"></i> 代码托管平台
+                </div>
+                <div class="social-icon" onclick="openInNewTab('https://storage.pguide.studio/oss')">
+                    <i class="fas fa-cloud"></i> 项导对象存储
+                </div>
+                <div class="social-icon" onclick="openInNewTab('https://latex.cqmu.edu.cn')">
+                    <i class="fas fa-file-alt"></i> LaTeX协作平台
+                </div>
+                <div class="social-icon" onclick="openInNewTab('https://www.pguide.studio')">
+                    <i class="fas fa-globe"></i> 项导工作室官网
+                </div>
+                <div class="social-icon" onclick="openInNewTab('https://docs.pguide.studio')">
+                    <i class="fas fa-book"></i> 项导文档
+                </div>
+                <div class="social-icon" onclick="openInNewTab('https://mirrors.cqmu.edu.cn')">
+                    <i class="fas fa-server"></i> 开源软件镜像站
+                </div>
+                <div class="social-icon" onclick="openInNewTab('https://cloud.pguide.studio/hpc')">
+                    <i class="fas fa-cloud-upload-alt"></i> 云计算资源调度中心
+                </div>
+            </div>
             <!-- <p><span class="gradient-text">PGuide Studio</span> © 2023-2025</p> -->
             <!-- 哇哦，原来你真的会看代码！ -->
-            <p>PGuide Studio © 2023-present | ❤ Thanks to these <a target="_blanket" href=""
-                    color="white">{Developers}</a>!</p>
+            <p>PGuide Studio © 2023-present | ❤ Thanks to these <a href="developers.html" style="color: rgb(255, 255, 255); transition: color 0.3s ease;" onmouseover="this.style.color='pink'" onmouseout="this.style.color='rgb(255,255,255)'">{Developers}</a>!</p>
             <p>时光逆流之日，繁星坠落之时。 -- Ranni</p>
         </div>
     </div>
