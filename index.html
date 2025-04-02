@@ -26,8 +26,8 @@
             font-family: 'MapleMono', sans-serif;
             margin: 0;
             padding: 0;
-            color: rgba(255, 255, 255, 0.8);
-            background-image: url('/assets/moon.jpg');
+            color: #ffffff; /* 修改字体颜色为黑色 */
+            background-image: url('/assets/night-view.jpg');
             background-size: cover;
             background-position: center;
         }
@@ -35,13 +35,12 @@
         .container {
             height: 90vh;
             max-width: 1200px;
-            margin: 0 auto;
-            margin-top: 20px;
+            margin: 20px auto 0;
             padding: 20px 20px 20px 20px;
-            background: rgba(0, 0, 0, 0.1);
+            background: rgba(0, 0, 0, 0.05);
             /* 提高透明度 */
             border-radius: 12px;
-            backdrop-filter: blur(20px);
+            backdrop-filter: blur(50px);
             /* 添加模糊效果 */
             -webkit-backdrop-filter: blur(10px);
             /* 兼容 WebKit 浏览器 */
@@ -52,13 +51,13 @@
         h1 {
             text-align: center;
             margin-bottom: 10px;
+            color: #97B4FF;
         }
-
 
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(6, 1fr);
             gap: 20px;
 
         }
@@ -101,11 +100,31 @@
         }
 
         .icon-symbol {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath fill='%236F94F4' fill-rule='evenodd' d='M6 2.984V2h-.09q-.47 0-.909.185a2.3 2.3 0 0 0-.775.53a2.2 2.2 0 0 0-.493.753v.001a3.5 3.5 0 0 0-.198.83v.002a6 6 0 0 0-.024.863q.018.435.018.869q0 .304-.117.572v.001a1.5 1.5 0 0 1-.765.787a1.4 1.4 0 0 1-.558.115H2v.984h.09q.292 0 .556.121l.001.001q.267.117.455.318l.002.002q.196.195.307.465l.001.002q.117.27.117.566q0 .435-.018.869q-.018.443.024.87v.001q.05.425.197.824v.001q.16.41.494.753q.335.345.775.53t.91.185H6v-.984h-.09q-.299 0-.562-.115a1.6 1.6 0 0 1-.457-.32a1.7 1.7 0 0 1-.309-.467q-.11-.27-.11-.573q0-.343.011-.672q.012-.342 0-.665a5 5 0 0 0-.055-.64a2.7 2.7 0 0 0-.168-.609A2.3 2.3 0 0 0 3.522 8a2.3 2.3 0 0 0 .738-.955q.12-.288.168-.602q.05-.315.055-.64q.012-.33 0-.666t-.012-.678a1.47 1.47 0 0 1 .877-1.354a1.3 1.3 0 0 1 .563-.121zm4 10.032V14h.09q.47 0 .909-.185t.775-.53t.493-.753v-.001q.15-.4.198-.83v-.002q.042-.42.024-.863q-.018-.435-.018-.869q0-.304.117-.572v-.001a1.5 1.5 0 0 1 .765-.787q.264-.115.558-.115H14v-.984h-.09q-.292 0-.556-.121l-.001-.001a1.4 1.4 0 0 1-.455-.318l-.002-.002a1.4 1.4 0 0 1-.307-.465l-.001-.002a1.4 1.4 0 0 1-.117-.566q0-.435.018-.869a6 6 0 0 0-.024-.87v-.001a3.5 3.5 0 0 0-.197-.824v-.001a2.2 2.2 0 0 0-.494-.753a2.3 2.3 0 0 0-.775-.53a2.3 2.3 0 0 0-.91-.185H10v.984h.09q.299 0 .562.115q.26.123.457.32q.19.201.309.467q.11.27.11.573q0 .342-.011.672q-.012.342 0 .665q.006.333.055.64q.05.32.168.609a2.3 2.3 0 0 0 .738.955a2.3 2.3 0 0 0-.738.955a2.7 2.7 0 0 0-.168.602q-.05.315-.055.64q-.012.33 0 .666t.012.678a1.47 1.47 0 0 1-.42 1.035a1.5 1.5 0 0 1-.457.319a1.3 1.3 0 0 1-.563.121z' clip-rule='evenodd'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48ZyBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIHN0cm9rZT0iI2VlZDQ5ZiIgZD0iTTExLjUgNkExLjUgMS41IDAgMCAxIDEwIDcuNUExLjUgMS41IDAgMCAxIDguNSA2QTEuNSAxLjUgMCAwIDEgMTAgNC41QTEuNSAxLjUgMCAwIDEgMTEuNSA2IiBzdHJva2Utd2lkdGg9IjEiLz48cGF0aCBzdHJva2U9IiNhNmRhOTUiIGQ9Ik03LjUgMTMuNUwxMSAxMGMuNS0uNSAxLjUtLjUgMiAwbDEuNSAxLjUiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIHN0cm9rZT0iI2E2ZGE5NSIgZD0ibTEuNSA5LjVsMi0yQzQgNyA1IDcgNS41IDcuNWw0IDQiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIHN0cm9rZT0iIzdkYzRlNCIgZD0iTTMgMi41aDEwYy44MyAwIDEuNS42NyAxLjUgMS41djhjMCAuODMtLjY3IDEuNS0xLjUgMS41SDNBMS41IDEuNSAwIDAgMSAxLjUgMTJWNGMwLS44My42Ny0xLjUgMS41LTEuNSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9nPjwvc3ZnPg==");
         }
 
         .icon-copyright {
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512'%3E%3Cpath fill='%236F94F4' d='M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248s248-111.033 248-248S392.967 8 256 8m0 448c-110.532 0-200-89.451-200-200c0-110.531 89.451-200 200-200c110.532 0 200 89.451 200 200c0 110.532-89.451 200-200 200m107.351-101.064c-9.614 9.712-45.53 41.396-104.065 41.396c-82.43 0-140.484-61.425-140.484-141.567c0-79.152 60.275-139.401 139.762-139.401c55.531 0 88.738 26.62 97.593 34.779a11.965 11.965 0 0 1 1.936 15.322l-18.155 28.113c-3.841 5.95-11.966 7.282-17.499 2.921c-8.595-6.776-31.814-22.538-61.708-22.538c-48.303 0-77.916 35.33-77.916 80.082c0 41.589 26.888 83.692 78.277 83.692c32.657 0 56.843-19.039 65.726-27.225c5.27-4.857 13.596-4.039 17.82 1.738l19.865 27.17a11.95 11.95 0 0 1-1.152 15.518'/%3E%3C/svg%3E");
+        }
+
+        .icon-ppt {
+            background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj48cGF0aCBmaWxsPSIjZDMzOTIyIiBkPSJNMTguNTM2IDIuMzIxdjIuODYzYzMuNC4wMTkgNy4zNTctLjAzNSAxMC43NTQuMDE2Yy42NDIgMCAuNjcuNTY4LjY3OCAxLjA2NGMuMDU0IDUuOTQyLS4wMTMgMTIuMDU1LjAzMiAxOGMtLjAxMi4yMzQtLjAwNiAxLjEtLjAxMyAxLjM0NmMtLjAyMi44MjMtLjQzNC44NTktMS4yNTcuODg0Yy0uMTMyIDAtLjUyLjAwNi0uNjQ4LjAxMmMtMy4xODEtLjAxNi02LjM2Mi0uMDA5LTkuNTQ2LS4wMDl2My4xODJMMiAyNy4xMzRWNC44NzN6Ii8+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTE4LjUzNiA2LjEzOGgxMC41djE5LjRoLTEwLjVWMjNoNy42MzR2LTEuMjc1aC03LjYzNHYtMS41OWg3LjYzNHYtMS4yNzJoLTcuNjMxcS4wMDItLjkzNi0uMDA2LTEuODdhNC40NyA0LjQ3IDAgMCAwIDMuODItLjM3NWE0LjM1IDQuMzUgMCAwIDAgMS45NTktMy40NzRjLTEuNC0uMDEtMi43OTMtLjAwNi00LjE4Ni0uMDA2YzAtMS4zODQuMDE2LTIuNzY3LS4wMjktNC4xNDhjLS41MjIuMS0xLjA0My4yMS0xLjU2Mi4zMjFWNi4xMzkiLz48cGF0aCBmaWxsPSIjZDMzOTIyIiBkPSJNMjAuNzY2IDguMzI0YTQuNDc2IDQuNDc2IDAgMCAxIDQuMTg2IDQuMTY3Yy0xLjQuMDE2LTIuNzkzLjAxLTQuMTg5LjAxVjguMzI0Ii8+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTcuMSAxMC43MjZjMS43MjcuMDgzIDMuODItLjY4NCA1LjI1Mi42MTFjMS4zNzEgMS42NjQgMS4wMDggNC43MjQtMS4wMjQgNS43MTlBNC43IDQuNyAwIDAgMSA5IDE3LjM0OGMwIDEuMjQ0LS4wMDYgMi40ODggMCAzLjczMXEtLjk0Ny0uMDgyLTEuODkzLS4xNTljLS4wMjktMy40LS4wMzUtNi44IDAtMTAuMiIvPjxwYXRoIGZpbGw9IiNkMzM5MjIiIGQ9Ik04Ljk5MyAxMi40NDZjLjYyNy0uMDI5IDEuNC0uMTQzIDEuODI2LjQ0NWEyLjMgMi4zIDAgMCAxIC4wNDEgMi4wODdjLS4zNjMuNjU1LTEuMTgzLjU5Mi0xLjgxNi42NjhjLS4wNjctMS4wNjYtLjA2LTIuMTMxLS4wNTEtMy4yIi8+PC9zdmc+");
+        }
+
+        .icon-download {
+            background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48ZyBmaWxsPSJub25lIiBzdHJva2U9IiM2Rjk0RjQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyIj48cGF0aCBmaWxsPSIjNkY5NEY0IiBmaWxsLW9wYWNpdHk9IjAiIHN0cm9rZS1kYXNoYXJyYXk9IjIwIiBzdHJva2UtZGFzaG9mZnNldD0iMjAiIGQ9Ik0xMiA0aDJ2NmgyLjVsLTQuNSA0LjVNMTIgNGgtMnY2aC0yLjVsNC41IDQuNSI+PGFuaW1hdGUgYXR0cmlidXRlTmFtZT0iZCIgYmVnaW49IjAuNXMiIGR1cj0iMS41cyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiIHZhbHVlcz0iTTEyIDRoMnY2aDIuNWwtNC41IDQuNU0xMiA0aC0ydjZoLTIuNWw0LjUgNC41O00xMiA0aDJ2M2gyLjVsLTQuNSA0LjVNMTIgNGgtMnYzaC0yLjVsNC41IDQuNTtNMTIgNGgydjZoMi41bC00LjUgNC41TTEyIDRoLTJ2NmgtMi41bDQuNSA0LjUiLz48YW5pbWF0ZSBmaWxsPSJmcmVlemUiIGF0dHJpYnV0ZU5hbWU9ImZpbGwtb3BhY2l0eSIgYmVnaW49IjAuN3MiIGR1cj0iMC41cyIgdmFsdWVzPSIwOzEiLz48YW5pbWF0ZSBmaWxsPSJmcmVlemUiIGF0dHJpYnV0ZU5hbWU9InN0cm9rZS1kYXNob2Zmc2V0IiBkdXI9IjAuNHMiIHZhbHVlcz0iMjA7MCIvPjwvcGF0aD48cGF0aCBzdHJva2UtZGFzaGFycmF5PSIxNCIgc3Ryb2tlLWRhc2hvZmZzZXQ9IjE0IiBkPSJNNiAxOWgxMiI+PGFuaW1hdGUgZmlsbD0iZnJlZXplIiBhdHRyaWJ1dGVOYW1lPSJzdHJva2UtZGFzaG9mZnNldCIgYmVnaW49IjAuNXMiIGR1cj0iMC4ycyIgdmFsdWVzPSIxNDswIi8+PC9wYXRoPjwvZz48L3N2Zz4=");
+        }
+
+        .icon-tools {
+            background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48ZyBmaWxsPSJub25lIiBzdHJva2U9IiM2Rjk0RjQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyIj48cGF0aCBkPSJNMyAyMWg0TDIwIDhhMS41IDEuNSAwIDAgMC00LTRMMyAxN3pNMTQuNSA1LjVsNCA0Ii8+PHBhdGggZD0iTTEyIDhMNyAzTDMgN2w1IDVNNyA4TDUuNSA5LjVNMTYgMTJsNSA1bC00IDRsLTUtNW00IDFsLTEuNSAxLjUiLz48L2c+PC9zdmc+");
+        }
+
+        .icon-canva {
+            background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiB2aWV3Qm94PSIwIDAgMTI4IDEyOCI+PGcgZmlsbD0iIzAwYzRjYyI+PHBhdGggZD0iTTU5LjM5LjE1MmMtLjQ4NC4wNTEtMS45OTUuMjMtMy4zMjguMzg3Yy01LjM3NC42MTMtMTEuNDY4IDIuMjI3LTE2LjgxNiA0LjQ4QzE5Ljg5MSAxMy4xMDYgNS4zMjQgMzAuODQ5IDEuMzA1IDUxLjJDLjM1OSA1Ni4wNC4xMjkgNTguNDE4LjEyOSA2NGMwIDcuMTk1LjcxNSAxMi4xNiAyLjYxIDE4LjQzNGM2LjE5NSAyMC41MyAyMi4zMjMgMzYuNjMyIDQyLjkwNiA0Mi44NTFjNi4xOTUgMS44NzEgMTEuMTg3IDIuNTg2IDE4LjM1NSAyLjU4NmM3LjE5NSAwIDEyLjE2LS43MTUgMTguNDM0LTIuNjFjMjAuNTMtNi4xOTUgMzYuNjMyLTIyLjMyMyA0Mi44NTEtNDIuOTA2YzEuODcxLTYuMTk1IDIuNTg2LTExLjE4NyAyLjU4Ni0xOC4zNTVjMC0zLjA0Ny0uMTUyLTYuNTI3LS4zMzItNy44MDljLTIuMDc0LTE0Ljc5Ni04LjE2OC0yNy4yMzgtMTguMzI4LTM3LjQwMkM5OS4wNyA4LjcwMyA4Ni42OCAyLjU4NiA3Mi4xOS41MTJjLTEuOTk2LS4yODItMTEuMjM4LS41NC0xMi44LS4zNm0tMjAuODYzIDQwLjMyYzEuMzYuNDEgMS45OTYuNzk0IDIuOTE4IDEuNzE1YzEuNzkzIDEuODIgMi4yMDMgMi44MTcgMi4yMDMgNS41NTVjMCAyLjA1MS0uMDc4IDIuNDM0LS42OTEgMy41MDhjLTEuMTggMS45OTYtMy45MTggMy44NC01LjgxMiAzLjg5Yy0xLjMzMy4wMjgtMS4yNzgtLjU2Mi4xOC0yLjA5N2MxLjk0NS0yLjAyMyAyLjIyNi0yLjc5IDIuMjI2LTUuODEzYy0uMDI0LTIuOTE3LS4zODMtMy45MTQtMS43MzktNC43MzRjLTEuMTI4LS42OTEtMi4zNTUtLjY0LTQuMTQ4LjIwM2MtNC42NiAyLjIzLTkuNzAzIDkuNjUzLTExLjY3MiAxNy4yNThjLTIuNjEzIDEwLjEzNyAyLjAyIDE4LjI1IDkuNjQ5IDE2Ljg2N2MyLjIyNi0uNDEgNi40MjUtMi41NTggOC4yNDYtNC4yNWMxLjUwOC0xLjM3OSAxLjUwOC0xLjQwNiAxLjY2LTMuMTJjLjMzNi0zLjU4NyAyLjg2Ny03LjE2OSA2LjI1LTguODMzYzEuNTU4LS43NyAxLjk0NS0uODQ0IDQuMDQzLS44NDRjMS45OTYgMCAyLjQ1Ny4xMDIgMy40My42MzdjMy4wOTcgMS43NyAyLjQ1NyA1Ljg5LS44OTUgNS44OWMtMS45NDUgMC0yLjk0NS0xLTEuNTM1LTEuNTM0YzEuMzgzLS41MTIuODY3LTIuNDM0LS43NDItMi44NjhjLTEuODk1LS40ODgtNC4wNDcuNzkzLTUuNDAzIDMuMjVjLTEuNjQgMi45Ny0xLjcxNSA2LjUwNC0uMTU2IDguMTE0YzEuNTEyIDEuNjEzIDMuNDA2LjMzNiA0Ljg2Ny0zLjMyOWMuNzY2LTEuODY3IDEuODY3LTIuODY3IDMuMTQ5LTIuODY3YzEuMTI1IDAgMS4zMzIuNjkyLjg0MyAyLjc5M2MtLjcxOCAzLjI1LS4yMyA0LjA5NCAxLjc5MyAzLjA5OGMuNjY0LS4zMDkgMS43NjYtMS4wMjMgMi40My0xLjUzNWwxLjI1NC0xbC44NDgtNC40M2MuOTIyLTQuOTY1IDEuMjc3LTUuNjMzIDMuMTcyLTUuOTg4YzEuODItLjMzNiAyLjIzLjU2MiAxLjU2MiAzLjQwMmwtLjM2IDEuNTlsMS4zMzMtMS4zNmMzLjE0OC0zLjIyNiA3LjAxNS00LjgxMiA4LjM0Ny0zLjQ4Yy43MTUuNzE1LjYzNyAxLjYxMy0uMzg2IDQuNzg1Yy0uNDg1IDEuNTEyLTEuMTUzIDMuODk1LTEuNDU3IDUuMjVjLS40NjEgMi4wNDctLjQ4OSAyLjUzNS0uMjMgMi44NjhjLjgyLjk3MiAzLjMyNy0uMDI4IDUuNTU0LTIuMjA0bDEuMzA1LTEuMjc3bC4xNTYtMi44NDRjLjE1Mi0zLjI3Ny40NTctNC40NTMgMS4zMjgtNS41MDRjLjgyLS45NzIgMi4zMDUtMS42ODcgMy4wOTgtMS40ODRjLjc5My4yMDcuNzkzLjk3My4wNzggMy4yMjdjLTEgMy4wOTctLjg5NSAxMC4yMzguMTI5IDEwLjIzOGMuNDEgMCAyLjUwNy0yLjIgMy44NC00LjA0M2wuOTk2LTEuMzZsLS43OTMtLjgxNmMtMS4zODMtMS40Ni0xLjcxNS0yLjQwNi0xLjcxNS00Ljc4OWMwLTEuNzM4LjEyOS0yLjM3OS41NjItMy4yMjdjLjcxOS0xLjMyOCAxLjg0NC0yLjMgMy4xNzYtMi42ODdjMS40MDYtLjQzNCAzLjE0OC4yODEgMy44NjMgMS41NjJjLjcxOSAxLjMwNS41NCA0LjIyMy0uMzgzIDYuMjIzbC0uNjY0IDEuNDU3aC44OTVjMS4yMyAwIDEuNzE1LS4zMDUgMy45MTgtMi4zNzljMS4xNTItMS4xMDEgMi40ODQtMi4wNSAzLjQ4LTIuNTExYzMuOTE4LTEuODQgOC41MjgtLjg5NSA5LjI5MyAxLjkyMWMuNjQgMi4yNTQtLjc2NSAzLjg0LTMuMjI2IDMuNjZjLTEuNzY2LS4xMjgtMi4wOTgtLjU5LTEuMDc0LTEuNDU2YzEuODQzLTEuNTQgMC0zLjUwOC0yLjYzNy0yLjc5M2MtMS40MzQuMzg2LTMuMDQ3IDEuOTk2LTMuODkgMy44NjdjLTEuNjkyIDMuNzM4LS43OTQgOC4xNCAxLjYzNiA4LjE0Yy45NzMgMCAyLjY5MS0xLjkyMSAzLjM1NS0zLjc4OWMuNzkzLTIuMTUyIDIuNDU3LTMuNTA3IDMuNzExLTMuMDJjLjY5Mi4yNTUuNzQzLjk0Ni4zMDkgMy4xMjJjLS40ODggMi4zODMtLjU2MyA0LjYxLS4xOCA1LjYzM2MuMTUzLjM4Mi42MTQgMS4xMDEgMS4wNTEgMS41ODZjLjgxNi45MjEuODQ0IDEuMjU0LjE1MiAxLjY5MWMtLjMzMi4yMy0uNzcuMTI5LTEuODQzLS40NmMtMS40ODUtLjc3LTIuNzY2LTIuMTUzLTMuMjI3LTMuNDU4bC0uMjgxLS43NjZsLTEuMDI0Ljc2NmMtLjU5LjQxLTEuNTExLjg3MS0yLjA0NyAxLjAyM2MtMi4xMjUuNTYzLTQuNzM4LS44OTQtNS45NjQtMy4zNTFjLS40ODktLjk1LS42NDEtMy43MzgtLjI4Mi00LjgxM2MuMjA0LS41OS4yMDQtLjU5LS42MTctLjE4Yy0uNDMzLjIzMS0xLjM1NS40ODUtMi4wNy41NjNjLTEuMTguMTMtMS4zNi4yNTgtMi41MzUgMS43NDJjLTEuNjY0IDIuMDctNC42MSA0Ljg2NC01LjgxMyA1LjQ1NGMtMi41NTggMS4yNzctMy40MDIuOTE4LTQuMDctMS43MmwtLjQ2MS0xLjc2NWwtMS4xMDIuOTczYy0xLjQwNiAxLjIzLTQuMjIyIDIuNzE1LTUuODM2IDMuMDc0Yy0xLjUzNS4zMzItMy4xNzUtLjE1Ni0zLjg0LTEuMThjLS45OTUtMS41MzUtLjY2My00Ljc4NS45MjItOS4xNjRjMS4xNzYtMy4yNS4zMzMtMy4zLTIuNjM2LS4yMDNjLTIuMjAzIDIuMzI4LTMuMTQ5IDMuOTkyLTMuNzYyIDYuNTc4Yy0uNjQgMi42ODgtMS40MSAzLjY2LTMuMTQ4IDQuMDdjLTEuMDUxLjIzMS0xLjU0LS40MS0xLjMzMi0xLjgxNmwuMTUyLTEuMTI5bC0uOTczLjY2OGMtMS4zODMuOTQ2LTMuMTI1IDEuODE3LTQuMzI4IDIuMTQ5cy0yLjc4OS0uMDI0LTMuMTcyLS42OTJjLS42OTEtMS4xNzUtLjY5MS0xLjE3NS0xLjc2NS0uMzMyYy0yLjMzMiAxLjg5NS01LjY2IDEuMzU2LTcuMzQ4LTEuMTUybC0uNTQtLjc5M2wtMS42ODcgMS41NjJjLTQuODY3IDQuNDU0LTEwLjk1NyA2LjQ1LTE1LjQ2NCA1LjA2N2MtNS43MzUtMS43MzgtOC45MDctNi42NTYtOC44NTYtMTMuNzQ2Yy4wMjQtNy4xMTcgMy4xNzItMTQuNjE3IDguNDczLTIwLjE3MmMyLjk5Ni0zLjEyNSA1LjgxMi00Ljk2OSA4LjY4LTUuNjZjMi4wNy0uNTEyIDMuMzI4LS40ODUgNS4yOTYuMTI5em0wIDAiLz48cGF0aCBkPSJNOTAuNDE4IDU4LjY3NmMtLjU2My41NjItLjM1NiAyLjgxNi4zNiA0LjI1Yy4zNTkuNzQyLjc0MiAxLjMzMi44NyAxLjMzMmMuMTAyIDAgLjMzMi0uNTkuNTEyLTEuMzA5Yy42NC0yLjY2LS41MTItNS41MDQtMS43NDItNC4yNzNtMCAwIi8+PC9nPjwvc3ZnPg==");
+        }
+
+        .icon-os {
+            background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48bWFzayBpZD0ibGluZU1kR2l0aHViTG9vcDAiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgeD0iMCIgeT0iMCI+PGcgZmlsbD0iI2ZmZiI+PGVsbGlwc2UgY3g9IjkuNSIgY3k9IjkiIHJ4PSIxLjUiIHJ5PSIxIi8+PGVsbGlwc2UgY3g9IjE0LjUiIGN5PSI5IiByeD0iMS41IiByeT0iMSIvPjwvZz48L21hc2s+PGcgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNkY5NEY0IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMiI+PHBhdGggc3Ryb2tlLWRhc2hhcnJheT0iMzIiIHN0cm9rZS1kYXNob2Zmc2V0PSIzMiIgZD0iTTEyIDRjMS42NyAwIDIuNjEgMC40IDMgMC41YzAuNTMgLTAuNDMgMS45NCAtMS41IDMuNSAtMS41YzAuMzQgMSAwLjI5IDIuMjIgMCAzYzAuNzUgMSAxIDIgMSAzLjVjMCAyLjE5IC0wLjQ4IDMuNTggLTEuNSA0LjVjLTEuMDIgMC45MiAtMi4xMSAxLjM3IC0zLjUgMS41YzAuNjUgMC41NCAwLjUgMS44NyAwLjUgMi41YzAgMC43MyAwIDMgMCAzTTEyIDRjLTEuNjcgMCAtMi42MSAwLjQgLTMgMC41Yy0wLjUzIC0wLjQzIC0xLjk0IC0xLjUgLTMuNSAtMS41Yy0wLjM0IDEgLTAuMjkgMi4yMiAwIDNjLTAuNzUgMSAtMSAyIC0xIDMuNWMwIDIuMTkgMC40OCAzLjU4IDEuNSA0LjVjMS4wMiAwLjkyIDIuMTEgMS4zNyAzLjUgMS41Yy0wLjY1IDAuNTQgLTAuNSAxLjg3IC0wLjUgMi41YzAgMC43MyAwIDMgMCAzIj48YW5pbWF0ZSBmaWxsPSJmcmVlemUiIGF0dHJpYnV0ZU5hbWU9InN0cm9rZS1kYXNob2Zmc2V0IiBkdXI9IjAuN3MiIHZhbHVlcz0iMzI7MCIvPjwvcGF0aD48cGF0aCBzdHJva2UtZGFzaGFycmF5PSIxMCIgc3Ryb2tlLWRhc2hvZmZzZXQ9IjEwIiBkPSJNOSAxOWMtMS40MDYgMC0yLjg0NC0uNTYzLTMuNjg4LTEuMTg4QzQuNDcgMTcuMTg4IDQuMjIgMTYuMTU3IDMgMTUuNSI+PGFuaW1hdGUgYXR0cmlidXRlTmFtZT0iZCIgZHVyPSIzcyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiIHZhbHVlcz0iTTkgMTljLTEuNDA2IDAtMi44NDQtLjU2My0zLjY4OC0xLjE4OEM0LjQ3IDE3LjE4OCA0LjIyIDE2LjE1NyAzIDE1LjU7TTkgMTljLTEuNDA2IDAtMy0uNS00LS41LS41MzIgMC0xIDAtMi0uNTtNOSAxOWMtMS40MDYgMC0yLjg0NC0uNTYzLTMuNjg4LTEuMTg4QzQuNDcgMTcuMTg4IDQuMjIgMTYuMTU3IDMgMTUuNSIvPjxhbmltYXRlIGZpbGw9ImZyZWV6ZSIgYXR0cmlidXRlTmFtZT0ic3Ryb2tlLWRhc2hvZmZzZXQiIGJlZ2luPSIwLjhzIiBkdXI9IjAuMnMiIHZhbHVlcz0iMTA7MCIvPjwvcGF0aD48L2c+PHJlY3Qgd2lkdGg9IjgiIGhlaWdodD0iNCIgeD0iOCIgeT0iMTEiIGZpbGw9IiM2Rjk0RjQiIG1hc2s9InVybCgjbGluZU1kR2l0aHViTG9vcDApIj48YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJ5IiBkdXI9IjEwcyIga2V5VGltZXM9IjA7MC40NTswLjQ2OzAuNTQ7MC41NTsxIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgdmFsdWVzPSIxMTsxMTs3Ozc7MTE7MTEiLz48L3JlY3Q+PC9zdmc+");
         }
 
         .footer {
@@ -113,20 +132,23 @@
             text-align: center;
             position: fixed;
             bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            /* 居中对齐 */
-            text-align: center;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* 调整图标之间的间距 */
+            flex-wrap: nowrap; /* 禁止换行 */
         }
 
         .social-icon {
-            position: relative;
             display: inline-block;
+            position: relative;
             cursor: pointer;
             font-size: 16px;
             color: #ffffff;
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: color 0.3s ease, transform 0.3s ease;
         }
 
         .social-icon::after {
@@ -142,6 +164,7 @@
 
         .social-icon:hover {
             color: #4770DC;
+            transform: scale(1.1) rotate(10deg); /* 放大并旋转效果 */
         }
 
         .social-icon:hover::after {
@@ -158,7 +181,7 @@
 
         @keyframes gradient-animation {
             0% {
-                background-position: 0% 50%;
+                background-position: 0 50%;
             }
 
             100% {
@@ -178,10 +201,6 @@
             cursor: pointer;
             font-size: 16px;
             z-index: 1000;
-        }
-
-        .back-button:hover {
-            background: rgba(0, 0, 0, 0.7);
         }
     </style>
 
@@ -206,96 +225,128 @@
         detailContent.innerHTML = `<p>这里是关于 ${detailType} 的详细信息。</p>`;
         grid.appendChild(detailContent);
     }
+
+
     function goBack() {
         location.reload(); // 刷新页面返回主页面
     }
+
     function openInNewTab(url) {
         window.open(url, '_blank');
     }
+
+
 </script>
 
 <body>
-    <div class="container">
-        <button class="back-button" onclick="goBack()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                viewBox="0 0 24 24">
-                <g fill="#6F94F4">
-                    <path d="M17 21H7a2 2 0 0 1-2-2v-9l7-7l7 7v9a2 2 0 0 1-2 2" opacity="0.16" />
-                    <path
-                        d="M20 10a1 1 0 1 0-2 0zM6 10a1 1 0 0 0-2 0zm14.293 2.707a1 1 0 0 0 1.414-1.414zM12 3l.707-.707a1 1 0 0 0-1.414 0zm-9.707 8.293a1 1 0 1 0 1.414 1.414zM7 22h10v-2H7zm13-3v-9h-2v9zM6 19v-9H4v9zm15.707-7.707l-9-9l-1.414 1.414l9 9zm-10.414-9l-9 9l1.414 1.414l9-9zM17 22a3 3 0 0 0 3-3h-2a1 1 0 0 1-1 1zM7 20a1 1 0 0 1-1-1H4a3 3 0 0 0 3 3z" />
-                </g>
-            </svg></button>
+<div class="container">
+    <button class="back-button" onclick="goBack()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+             viewBox="0 0 24 24">
+            <g fill="#6F94F4">
+                <path d="M17 21H7a2 2 0 0 1-2-2v-9l7-7l7 7v9a2 2 0 0 1-2 2" opacity="0.16"/>
+                <path
+                        d="M20 10a1 1 0 1 0-2 0zM6 10a1 1 0 0 0-2 0zm14.293 2.707a1 1 0 0 0 1.414-1.414zM12 3l.707-.707a1 1 0 0 0-1.414 0zm-9.707 8.293a1 1 0 1 0 1.414 1.414zM7 22h10v-2H7zm13-3v-9h-2v9zM6 19v-9H4v9zm15.707-7.707l-9-9l-1.414 1.414l9 9zm-10.414-9l-9 9l1.414 1.414l9-9zM17 22a3 3 0 0 0 3-3h-2a1 1 0 0 1-1 1zM7 20a1 1 0 0 1-1-1H4a3 3 0 0 0 3 3z"/>
+            </g>
+        </svg>
+    </button>
 
-        <h1>项导工作室视觉形象识别系统</h1>
-        <h3 align="center">
-            PGuide Studio Visual Identity System
-        </h3>
-        <div class="grid">
-            <div class="grid-item" onclick="openDetailPage('徽标规范')">
-                <div class="icon-placeholder icon-logo"></div>
-                <h3>徽标规范</h3>
-            </div>
-
-            <div class="grid-item" onclick="openDetailPage('标准字规范')">
-                <div class="icon-placeholder icon-text"></div>
-                <h3>标准字规范</h3>
-            </div>
-
-            <div class="grid-item" onclick="openDetailPage('色彩规范')">
-                <div class="icon-placeholder icon-color"></div>
-                <h3>色彩规范</h3>
-            </div>
-
-            <div class="grid-item" onclick="openDetailPage('徽标组合规范')">
-                <div class="icon-placeholder icon-combination"></div>
-                <h3>徽标组合规范</h3>
-            </div>
-            <div class="grid-item" onclick="openDetailPage('辅助图形规范')">
-                <div class="icon-placeholder icon-symbol"></div>
-                <h3>辅助图形规范</h3>
-            </div>
-            <div class="grid-item" onclick="openDetailPage('版权所有')">
-                <div class="icon-placeholder icon-copyright"></div>
-                <h3>版权所有</h3>
-            </div>
+    <h1>项导工作室视觉形象识别系统</h1>
+    <h3 align="center" style="color: #4770DC">
+        PGuide Studio Visual Identity System
+    </h3>
+    <div class="grid">
+        <div class="grid-item" onclick="openDetailPage('徽标规范')">
+            <div class="icon-placeholder icon-logo"></div>
+            <h4>徽标规范</h4>
         </div>
-        <!-- TODO: refactor this part -->
 
+        <div class="grid-item" onclick="openDetailPage('标准字规范')">
+            <div class="icon-placeholder icon-text"></div>
+            <h4>标准字规范</h4>
+        </div>
 
+        <div class="grid-item" onclick="openDetailPage('色彩规范')">
+            <div class="icon-placeholder icon-color"></div>
+            <h4>色彩规范</h4>
+        </div>
 
+        <div class="grid-item" onclick="openDetailPage('徽标组合规范')">
+            <div class="icon-placeholder icon-combination"></div>
+            <h4>徽标组合规范</h4>
+        </div>
+        <div class="grid-item" onclick="openDetailPage('辅助图形规范')">
+            <div class="icon-placeholder icon-symbol"></div>
+            <h4>辅助图形规范</h4>
+        </div>
+        <div class="grid-item" onclick="openDetailPage('版权所有')">
+            <div class="icon-placeholder icon-copyright"></div>
+            <h4>版权所有</h4>
+        </div>
+        <div class="grid-item" onclick="openDetailPage('PPT模板')">
+            <div class="icon-placeholder icon-ppt"></div>
+            <h4>PPT模板</h4>
+        </div>
 
-        </script>
-        <div class="footer" style="font-style: italic;">
-            <div class="social-icons">
-                <div class="social-icon" onclick="openInNewTab('https://git.cqmu.edu.cn')">
-                    <i class="fas fa-code"></i> 代码托管平台
-                </div>
-                <div class="social-icon" onclick="openInNewTab('https://storage.pguide.studio/oss')">
-                    <i class="fas fa-cloud"></i> 项导对象存储
-                </div>
-                <div class="social-icon" onclick="openInNewTab('https://latex.cqmu.edu.cn')">
-                    <i class="fas fa-file-alt"></i> LaTeX协作平台
-                </div>
-                <div class="social-icon" onclick="openInNewTab('https://www.pguide.studio')">
-                    <i class="fas fa-globe"></i> 项导工作室官网
-                </div>
-                <div class="social-icon" onclick="openInNewTab('https://docs.pguide.studio')">
-                    <i class="fas fa-book"></i> 项导文档
-                </div>
-                <div class="social-icon" onclick="openInNewTab('https://mirrors.cqmu.edu.cn')">
-                    <i class="fas fa-server"></i> 开源软件镜像站
-                </div>
-                <div class="social-icon" onclick="openInNewTab('https://cloud.pguide.studio/hpc')">
-                    <i class="fas fa-cloud-upload-alt"></i> 云计算资源调度中心
-                </div>
-            </div>
-            <!-- <p><span class="gradient-text">PGuide Studio</span> © 2023-2025</p> -->
-            <!-- 哇哦，原来你真的会看代码！ -->
-            <p>PGuide Studio © 2023-present | ❤ Thanks to these <a href="developers.html" style="color: rgb(255, 255, 255); transition: color 0.3s ease;" onmouseover="this.style.color='pink'" onmouseout="this.style.color='rgb(255,255,255)'">{Developers}</a>!</p>
-            <p>时光逆流之日，繁星坠落之时。 -- Ranni</p>
+        <div class="grid-item" onclick="openDetailPage('素材下载')">
+            <div class="icon-placeholder icon-download"></div>
+            <h4>素材下载</h4>
+        </div>
+
+        <div class="grid-item" onclick="openDetailPage('设计工具')">
+            <div class="icon-placeholder icon-tools"></div>
+            <h4>设计工具</h4>
+        </div>
+
+        <div class="grid-item" onclick="openDetailPage('可画群组')">
+            <div class="icon-placeholder icon-combination"></div>
+            <h4>可画团队</h4>
+        </div>
+        <div class="grid-item" onclick="openDetailPage('Adobe团队')">
+            <div class="icon-placeholder icon-canva"></div>
+            <h4>Adobe团队</h4>
+        </div>
+        <div class="grid-item" onclick="openDetailPage('开源社区')">
+            <div class="icon-placeholder icon-os"></div>
+            <h4>开源社区</h4>
         </div>
     </div>
 
+
+    <div class="footer" style="font-style: italic;">
+        <div class="social-icons">
+            <div class="social-icon" onclick="openInNewTab('https://git.cqmu.edu.cn')">
+                <i class="fas fa-code"></i> 代码托管平台
+            </div>
+            <div class="social-icon" onclick="openInNewTab('https://storage.pguide.studio/oss')">
+                <i class="fas fa-cloud"></i> 项导对象存储
+            </div>
+            <div class="social-icon" onclick="openInNewTab('https://latex.cqmu.edu.cn')">
+                <i class="fas fa-file-alt"></i> LaTeX协作平台
+            </div>
+            <div class="social-icon" onclick="openInNewTab('https://www.pguide.studio')">
+                <i class="fas fa-globe"></i> 项导工作室官网
+            </div>
+            <div class="social-icon" onclick="openInNewTab('https://docs.pguide.studio')">
+                <i class="fas fa-book"></i> 项导文档
+            </div>
+            <div class="social-icon" onclick="openInNewTab('https://mirrors.cqmu.edu.cn')">
+                <i class="fas fa-server"></i> 开源软件镜像站
+            </div>
+            <div class="social-icon" onclick="openInNewTab('https://cloud.pguide.studio/hpc')">
+                <i class="fas fa-cloud-upload-alt"></i> 云计算资源调度中心
+            </div>
+        </div>
+        <!-- <p><span class="gradient-text">PGuide Studio</span> © 2023-2025</p> -->
+        <!-- 哇哦，原来你真的会看代码！ -->
+        <p>PGuide Studio © 2023-present | <span style="color: red">❤</span> Thanks to these <a href="developers.html"
+                                                                                               style="color: rgb(255, 255, 255); transition: color 0.3s ease;"
+                                                                                               onmouseover="this.style.color='pink'"
+                                                                                               onmouseout="this.style.color='rgb(255,255,255)'">{Developers}</a>!
+        </p>
+        <p>时光逆流之日，繁星坠落之时。 -- Ranni</p>
     </div>
+</div>
 </body>
 
 </html>
