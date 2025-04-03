@@ -43,7 +43,7 @@
             border-radius: 12px;
             backdrop-filter: blur(20px);
             /* 添加模糊效果 */
-            -webkit-backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(40px);
             /* 兼容 WebKit 浏览器 */
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             /* 添加阴影效果 */
@@ -58,8 +58,10 @@
 
         .grid {
             display: flex;
-            flex-wrap: wrap;
-            gap: 16px;
+            flex-direction: column; /* 确保纵向排布 */
+
+            gap: 30px; /* 子元素间距 */
+            justify-content: space-between; /* 可根据需要调整为 center 或 space-between */
         }
 
         .grid-item {
@@ -71,7 +73,7 @@
             /* 设置 grid-item 的宽度 */
             height: 120px;
             /* 设置 grid-item 的高度 */
-            border: 1px solid #ddd;
+            border: 0px solid #ddd;
             border-radius: 8px;
             padding: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -96,7 +98,7 @@
 
         .user-id {
             font-size: 14px;
-            color: #333;
+            color: #ffffff;
             text-align: center;
         }
 
@@ -276,48 +278,8 @@
             </a>
 
         </div>
-        <div class="grid">
-            <a class="grid-item" href="https://github.com/Lyrlark" target="_blank">
-                <img src="https://avatars.githubusercontent.com/u/91131723?v=4" alt="用户头像" class="avatar">
-                <span class="user-id">rand777</span>
-            </a>
-        
         </div>
-        <div class="grid">
-            <a class="grid-item" href="https://github.com/Lyrlark" target="_blank">
-                <img src="https://avatars.githubusercontent.com/u/91131723?v=4" alt="用户头像" class="avatar">
-                <span class="user-id">rand777</span>
-            </a>
-        
-        </div>
-        <!-- TODO: refactor this part -->
-        <!-- 
-        <div class="social-icons">
-            <div class="social-icon" onclick="openInNewTab('https://zds.cqmu.edu.cn')">
-                <i class="fas fa-code"></i> 代码托管平台
-            </div>
-            <div class="social-icon" onclick="openInNewTab('https://storage.pguide.studio/oss')">
-                <i class="fas fa-cloud"></i> 项导对象存储
-            </div>
-            <div class="social-icon" onclick="openInNewTab('https://latex.cqmu.edu.cn')">
-                <i class="fas fa-file-alt"></i> LaTeX协作平台
-            </div>
-            <div class="social-icon" onclick="openInNewTab('https://www.pguide.studio')">
-                <i class="fas fa-globe"></i> 项导工作室官网
-            </div>
-            <div class="social-icon" onclick="openInNewTab('https://docs.pguide.studio')">
-                <i class="fas fa-book"></i> 项导文档
-            </div>
-            <div class="social-icon" onclick="openInNewTab('https://mirrors.cqmu.edu.cn')">
-                <i class="fas fa-server"></i> 开源软件镜像站
-            </div>
-            <div class="social-icon" onclick="openInNewTab('https://hub.pguide.studio/images')">
-                <i class="fa-brands fa-docker"></i> 容器镜像中心
-            </div>
-            <div class="social-icon" onclick="openInNewTab('https://cloud.pguide.studio/hpc')">
-                <i class="fas fa-cloud-upload-alt"></i> 云计算资源调度中心
-            </div>
-        </div> -->
+        <!-- TODO: 实现横向网格布局 -->
 
 
         </script>
