@@ -21,19 +21,17 @@
             font-style: italic;
         }
 
-
         body {
-            font-family: 'MapleMono', sans-serif;
             margin: 0;
             padding: 0;
-            color: #ffffff;
-            background-image: url('/assets/fdu.jpg');
+            background-image: url("assets/1.jpg");
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             transition: background-image 0.5s ease-in-out;
-            /* 添加背景图渐变效果 */
+            color: white;
         }
+
 
         .container {
             height: 90vh;
@@ -41,14 +39,11 @@
             margin: 20px auto 0;
             padding: 20px 20px 20px 20px;
             background: rgba(0, 0, 0, 0.05);
-            /* 提高透明度 */
             border-radius: 12px;
             backdrop-filter: blur(100px);
-            /* 添加模糊效果 */
             -webkit-backdrop-filter: blur(10px);
             /* 兼容 WebKit 浏览器 */
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-            /* 添加阴影效果 */
         }
 
         h1 {
@@ -311,6 +306,7 @@
 </head>
 
 <script>
+
     function toggleContainer() {
         const container = document.querySelector('.container');
         const toggleButton = document.querySelector('.toggle-button i');
@@ -334,15 +330,12 @@
         }
     }
 
-
-    const backgrounds = [
-        '/assets/fdu.jpg',
-        '/assets/lib.jpg',
-        '/assets/path.jpg',
-        '/assets/tslt.jpg',
-        '/assets/jxl.jpg',
-        '/assets/tsinghua.jpg',
-    ];
+    const backgrounds = [];
+    // 预加载背景图片
+    for (let i = 1; i <= 18; i++) {
+        const imagePath = `/assets/${i}.jpg`;
+        backgrounds.push(imagePath);
+    }
 
     let currentBackgroundIndex = 0;
 
