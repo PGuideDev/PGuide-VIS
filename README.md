@@ -4,7 +4,7 @@ PGuide Studio Visual Identity System
 
 ## 首页效果
 
-![page.png](page.png)
+![front.png](front.png)
 
 ## 相关资源
 - [Mono Font](https://github.com/subframe7536/maple-font)
