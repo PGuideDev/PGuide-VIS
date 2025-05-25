@@ -11,7 +11,6 @@
         @font-face {
             font-family: 'MapleMono';
             src: url('font/MapleMono-CN-Regular.ttf') format('woff2');
-
             font-style: normal;
         }
 
@@ -28,45 +27,117 @@
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            transition: background-image 0.5s ease-in-out;
             color: white;
+            font-family: 'MapleMono', sans-serif;
+            position: relative;
+            /* 添加这行 */
+            --text-color: white;
+            /* ...existing styles... */
+            color: var(--text-color);
+            transition: color 0.3s ease;
         }
 
+        h1,
+        h3,
+        h4,
+        .social-icon,
+        .footer {
+            color: var(--text-color);
+        }
+
+        /* 滚动条整体样式 */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        /* 滚动条轨道 */
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+        }
+
+        /* 滚动条滑块 */
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+            transition: background 0.3s ease;
+        }
+
+        /* 滚动条滑块悬停效果 */
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        /* 滚动条角落 */
+        ::-webkit-scrollbar-corner {
+            background: transparent;
+        }
+
+        /* Firefox 滚动条样式 */
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.1);
+        }
+
+        #background-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-size: cover;
+            background-position: center;
+            transition: opacity 1s ease;
+        }
 
         .container {
             height: 90vh;
+            width: 95%;
             max-width: 1200px;
             margin: 20px auto 0;
-            padding: 20px 20px 20px 20px;
+            padding: 15px;
             background: rgba(0, 0, 0, 0.05);
             border-radius: 12px;
             backdrop-filter: blur(100px);
             -webkit-backdrop-filter: blur(10px);
-            /* 兼容 WebKit 浏览器 */
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+            overflow-y: auto;
         }
 
         h1 {
             text-align: center;
             margin-bottom: 10px;
-            /*color: #97B4FF;*/
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
         }
 
+        h3 {
+            text-align: center;
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            margin-bottom: 20px;
+        }
+
+        h4 {
+            font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+            margin: 10px 0;
+        }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 20px;
-
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            padding: 10px;
         }
 
         .grid-item {
             background-color: rgba(0, 0, 0, 0.0);
             border-radius: 8px;
-            padding: 30px;
+            padding: 20px;
             text-align: center;
             cursor: pointer;
             transition: transform 0.3s, background-color 0.3s;
+            min-height: 120px;
         }
 
         .grid-item:hover {
@@ -134,58 +205,226 @@
         }
 
         .footer {
-            margin-top: 20px;
+            margin-top: 30px;
             text-align: center;
-            position: fixed;
-            bottom: 10px;
+            position: relative;
+            padding: 15px;
         }
 
         .social-icons {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            /* 调整图标之间的间距 */
-            flex-wrap: nowrap;
-            /* 禁止换行 */
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 0 10px;
         }
 
         .social-icon {
             display: inline-block;
             position: relative;
             cursor: pointer;
-            font-size: 16px;
+            font-size: clamp(0.8rem, 1.5vw, 1rem);
             color: #ffffff;
             text-decoration: none;
             transition: color 0.3s ease, transform 0.3s ease;
-        }
-
-        .social-icon::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: #4770DC;
-            transition: width 0.3s ease;
+            padding: 5px 10px;
         }
 
         .social-icon:hover {
             color: #4770DC;
             transform: scale(1.1);
-            /* 放大并旋转效果 */
         }
 
-        .social-icon:hover::after {
+        .back-button,
+        .left-button,
+        .right-button,
+        .toggle-button {
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        /* 添加到现有的style标签中 */
+        .button-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            z-index: 1000;
+            pointer-events: none;
+            /* 让容器不影响点击事件 */
+        }
+
+        .button-container button {
+            pointer-events: auto;
+            /* 恢复按钮的点击事件 */
+        }
+
+        .right-buttons {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        /* 更新标题样式 */
+        .container h1 {
+            margin-top: 70px;
+            /* 给顶部按钮留出空间 */
+            margin-bottom: 10px;
+            text-align: center;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+        }
+
+        /* 调整按钮样式 */
+        .back-button,
+        .left-button,
+        .right-button,
+        .toggle-button,
+        .color-picker-button {
+            position: relative;
+            /* 改为相对定位 */
+            top: auto;
+            right: auto;
+            left: auto;
+        }
+
+        /* 媒体查询优化 */
+        @media screen and (max-width: 768px) {
+            .button-container {
+                height: 50px;
+                padding: 0 10px;
+            }
+
+            .right-buttons {
+                gap: 5px;
+            }
+
+            .container h1 {
+                margin-top: 60px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .button-container {
+                height: 40px;
+            }
+
+            .container h1 {
+                margin-top: 50px;
+            }
+        }
+
+        /* 在.toggle-button样式后添加 */
+        .color-picker-button {
+            position: fixed;
+            top: 20px;
+            right: clamp(140px, 16vw, 180px);
+            width: clamp(35px, 4vw, 40px);
+            height: clamp(35px, 4vw, 40px);
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: clamp(16px, 2vw, 20px);
+            z-index: 1000;
+            transition: transform 0.2s ease;
+        }
+
+        .color-picker-panel {
+            position: fixed;
+            top: 70px;
+            right: clamp(140px, 16vw, 180px);
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            border-radius: 8px;
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            min-width: 200px;
+        }
+
+        .color-picker-panel.show {
+            display: flex;
+        }
+
+        .color-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .color-option:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .color-preview {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .custom-color-input {
+            background: none;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            color: white;
+            padding: 5px;
             width: 100%;
         }
 
-        .gradient-text {
-            background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradient-animation 5s infinite;
-            background-size: 200% 100%;
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: clamp(8px, 2vw, 10px) clamp(15px, 3vw, 20px);
+            border-radius: 25px;
+            font-size: clamp(14px, 1.5vw, 16px);
+        }
+
+        .left-button,
+        .right-button,
+        .toggle-button {
+            position: fixed;
+            top: 20px;
+            width: clamp(35px, 4vw, 40px);
+            height: clamp(35px, 4vw, 40px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: clamp(16px, 2vw, 20px);
+        }
+
+        .left-button {
+            right: clamp(100px, 12vw, 140px);
+        }
+
+        .right-button {
+            right: clamp(60px, 8vw, 80px);
+        }
+
+        .toggle-button {
+            right: 20px;
         }
 
         @keyframes gradient-animation {
@@ -198,53 +437,7 @@
             }
         }
 
-        .back-button {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            padding: 10px 20px;
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 16px;
-            z-index: 1000;
-        }
 
-        .left-button,
-        .right-button,
-        .toggle-button {
-            position: absolute;
-            top: 20px;
-            width: 40px;
-            height: 40px;
-            background-color: #4770DC;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            z-index: 1000;
-        }
-
-        .left-button {
-            right: 140px;
-            /* 调整按钮位置 */
-        }
-
-        .right-button {
-            right: 80px;
-            /* 调整按钮位置 */
-        }
-
-        .toggle-button {
-            right: 20px;
-            /* 调整按钮位置 */
-        }
 
         .container {
             transition: height 0.5s ease, opacity 0.5s ease;
@@ -301,11 +494,134 @@
             text-align: center;
             color: #97B4FF;
         }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                height: auto;
+                margin: 10px auto;
+                padding: 10px;
+            }
+
+            .grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 10px;
+            }
+
+            .footer {
+                margin-top: 20px;
+                position: relative;
+            }
+
+            .social-icons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .container {
+                width: 90%;
+                margin: 5px auto;
+                padding: 8px;
+            }
+
+            .grid-item {
+                padding: 15px;
+                min-height: 100px;
+            }
+
+            .icon-placeholder {
+                width: 40px;
+                height: 40px;
+            }
+
+            .back-button,
+            .left-button,
+            .right-button,
+            .toggle-button {
+                transform: scale(0.9);
+            }
+
+            .social-icon {
+                font-size: 0.8rem;
+                padding: 3px 8px;
+            }
+        }
     </style>
 
 </head>
 
 <script>
+    function openInNewTab(url) {
+        window.open(url, '_blank');
+    }
+
+    function goBack() {
+        location.reload();
+    }
+    function openDetailPage(detailType) {
+        // 获取 container 元素
+        const container = document.querySelector('.container');
+
+        // 修改 h1 为点击的 h4 内容
+        const h1 = container.querySelector('h1');
+        h1.textContent = detailType;
+
+        // 清空 grid 内容
+        const grid = container.querySelector('.grid');
+        grid.innerHTML = '';
+
+        // 添加详情内容
+        const detailContent = document.createElement('div');
+        detailContent.className = 'detail-content';
+        detailContent.innerHTML = `<p>这里是关于 ${detailType} 的详细信息。</p>`;
+        grid.appendChild(detailContent);
+    }
+
+    // 在已有的script标签中添加
+    function toggleColorPicker() {
+        const panel = document.getElementById('colorPickerPanel');
+        panel.classList.toggle('show');
+    }
+
+    function changeTextColor(color) {
+        try {
+            // 验证颜色代码是否有效
+            const testDiv = document.createElement('div');
+            testDiv.style.color = color;
+            if (testDiv.style.color === '') {
+                throw new Error('Invalid color code');
+            }
+
+            // 更改文字颜色
+            document.body.style.setProperty('--text-color', color);
+            document.querySelectorAll('h1, h3, h4, .social-icon, .footer').forEach(element => {
+                element.style.color = color;
+            });
+
+            // 保存颜色设置到localStorage
+            localStorage.setItem('textColor', color);
+        } catch (error) {
+            alert('请输入有效的颜色代码！');
+        }
+    }
+
+    // 页面加载时恢复保存的颜色设置
+    window.addEventListener('load', () => {
+        const savedColor = localStorage.getItem('textColor');
+        if (savedColor) {
+            changeTextColor(savedColor);
+        }
+
+        // 点击面板外关闭面板
+        document.addEventListener('click', (e) => {
+            const panel = document.getElementById('colorPickerPanel');
+            const colorPickerButton = document.querySelector('.color-picker-button');
+            if (!panel.contains(e.target) && !colorPickerButton.contains(e.target)) {
+                panel.classList.remove('show');
+            }
+        });
+    });
 
     function toggleContainer() {
         const container = document.querySelector('.container');
@@ -329,54 +645,90 @@
             }
         }
     }
-
+    // 替换原有的背景切换相关代码
     const backgrounds = [];
-    // 预加载背景图片
+    const preloadedImages = [];
+
+    // 预加载所有背景图片
     for (let i = 1; i <= 18; i++) {
         const imagePath = `/assets/${i}.jpg`;
         backgrounds.push(imagePath);
+
+        // 创建新的Image对象进行预加载
+        const img = new Image();
+        img.src = imagePath;
+        preloadedImages.push(img);
     }
 
     let currentBackgroundIndex = 0;
 
+    // 修改切换背景函数
     function changeBackground(direction) {
         const body = document.body;
+
+        // 计算新的索引
+        let newIndex;
         if (direction === 'left') {
-            currentBackgroundIndex = (currentBackgroundIndex - 1 + backgrounds.length) % backgrounds.length;
+            newIndex = (currentBackgroundIndex - 1 + backgrounds.length) % backgrounds.length;
         } else if (direction === 'right') {
-            currentBackgroundIndex = (currentBackgroundIndex + 1) % backgrounds.length;
+            newIndex = (currentBackgroundIndex + 1) % backgrounds.length;
         }
-        body.style.transition = 'background-image 1s ease-in-out';
-        body.style.backgroundImage = `url(${backgrounds[currentBackgroundIndex]})`;
+
+        // 创建新的包装元素用于过渡
+        const wrapper = document.createElement('div');
+        wrapper.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(${backgrounds[newIndex]});
+        background-size: cover;
+        background-position: center;
+        opacity: 0;
+        transition: opacity 1s ease;
+        z-index: -1;
+    `;
+
+        // 添加包装元素到body
+        document.body.appendChild(wrapper);
+
+        // 触发重排以确保过渡效果
+        wrapper.offsetHeight;
+
+        // 淡入新背景
+        wrapper.style.opacity = '1';
+
+        // 在过渡完成后更新实际背景并清理
+        setTimeout(() => {
+            body.style.backgroundImage = `url(${backgrounds[newIndex]})`;
+            wrapper.remove();
+            currentBackgroundIndex = newIndex;
+        }, 1000);
     }
 
-    function openDetailPage(detailType) {
-        // 获取 container 元素
-        const container = document.querySelector('.container');
+    // 在页面加载完成后预加载图片
+    window.addEventListener('load', () => {
+        // 添加背景容器
+        const bgContainer = document.createElement('div');
+        bgContainer.id = 'background-container';
+        bgContainer.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    `;
+        document.body.insertBefore(bgContainer, document.body.firstChild);
 
-        // 修改 h1 为点击的 h4 内容
-        const h1 = container.querySelector('h1');
-        h1.textContent = detailType;
-
-        // 清空 grid 内容
-        const grid = container.querySelector('.grid');
-        grid.innerHTML = '';
-
-        // 添加详情内容
-        const detailContent = document.createElement('div');
-        detailContent.className = 'detail-content';
-        detailContent.innerHTML = `<p>这里是关于 ${detailType} 的详细信息。</p>`;
-        grid.appendChild(detailContent);
-    }
-
-
-    function goBack() {
-        location.reload();
-    }
-
-    function openInNewTab(url) {
-        window.open(url, '_blank');
-    }
+        // 预加载所有图片
+        preloadedImages.forEach(img => {
+            img.onload = () => {
+                console.log('Image preloaded:', img.src);
+            };
+        });
+    });
 
 
 </script>
@@ -385,25 +737,54 @@
 
 
     <div class="container">
+        <div class="color-picker-panel" id="colorPickerPanel">
+            <div class="color-option" onclick="changeTextColor('#ffffff')">
+                <div class="color-preview" style="background: #ffffff"></div>
+                <span>默认白色</span>
+            </div>
+            <div class="color-option" onclick="changeTextColor('#97B4FF')">
+                <div class="color-preview" style="background: #97B4FF"></div>
+                <span>浅蓝色</span>
+            </div>
+            <div class="color-option" onclick="changeTextColor('#FFB6C1')">
+                <div class="color-preview" style="background: #FFB6C1"></div>
+                <span>浅粉色</span>
+            </div>
+            <div class="color-option" onclick="changeTextColor('#98FB98')">
+                <div class="color-preview" style="background: #98FB98"></div>
+                <span>浅绿色</span>
+            </div>
+            <div class="color-option">
+                <input type="text" class="custom-color-input" placeholder="输入自定义颜色代码"
+                    onchange="changeTextColor(this.value)">
+            </div>
+        </div>
 
-        <button class="back-button" onclick="goBack()">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                <g fill="#6F94F4">
-                    <path d="M17 21H7a2 2 0 0 1-2-2v-9l7-7l7 7v9a2 2 0 0 1-2 2" opacity="0.16" />
-                    <path
-                        d="M20 10a1 1 0 1 0-2 0zM6 10a1 1 0 0 0-2 0zm14.293 2.707a1 1 0 0 0 1.414-1.414zM12 3l.707-.707a1 1 0 0 0-1.414 0zm-9.707 8.293a1 1 0 1 0 1.414 1.414zM7 22h10v-2H7zm13-3v-9h-2v9zM6 19v-9H4v9zm15.707-7.707l-9-9l-1.414 1.414l9 9zm-10.414-9l-9 9l1.414 1.414l9-9zM17 22a3 3 0 0 0 3-3h-2a1 1 0 0 1-1 1zM7 20a1 1 0 0 1-1-1H4a3 3 0 0 0 3 3z" />
-                </g>
-            </svg>
-        </button>
-        <button class="button left-button" onclick="changeBackground('left')">
-            <i class="fas fa-chevron-left"></i>
-        </button>
-        <button class="button right-button" onclick="changeBackground('right')">
-            <i class="fas fa-chevron-right"></i>
-        </button>
-        <button class="button toggle-button" onclick="toggleContainer()">
-            <i class="fas fa-chevron-up"></i>
-        </button>
+        <div class="button-container">
+            <button class="back-button" onclick="goBack()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <g fill="#6F94F4">
+                        <path d="M17 21H7a2 2 0 0 1-2-2v-9l7-7l7 7v9a2 2 0 0 1-2 2" opacity="0.16" />
+                        <path
+                            d="M20 10a1 1 0 1 0-2 0zM6 10a1 1 0 0 0-2 0zm14.293 2.707a1 1 0 0 0 1.414-1.414zM12 3l.707-.707a1 1 0 0 0-1.414 0zm-9.707 8.293a1 1 0 1 0 1.414 1.414zM7 22h10v-2H7zm13-3v-9h-2v9zM6 19v-9H4v9zm15.707-7.707l-9-9l-1.414 1.414l9 9zm-10.414-9l-9 9l1.414 1.414l9-9zM17 22a3 3 0 0 0 3-3h-2a1 1 0 0 1-1 1zM7 20a1 1 0 0 1-1-1H4a3 3 0 0 0 3 3z" />
+                    </g>
+                </svg>
+            </button>
+            <div class="right-buttons">
+                <button class="button color-picker-button" onclick="toggleColorPicker()">
+                    <i class="fas fa-palette"></i>
+                </button>
+                <button class="button left-button" onclick="changeBackground('left')">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="button right-button" onclick="changeBackground('right')">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <button class="button toggle-button" onclick="toggleContainer()">
+                    <i class="fas fa-chevron-up"></i>
+                </button>
+            </div>
+        </div>
         <h1>项导工作室视觉形象识别系统</h1>
         <h3 align="center">
             PGuide Studio Visual Identity System
@@ -489,9 +870,6 @@
                 </div>
                 <div class="social-icon" onclick="openInNewTab('https://mirrors.cqmu.edu.cn')">
                     <i class="fas fa-server"></i> 开源软件镜像站
-                </div>
-                <div class="social-icon" onclick="openInNewTab('https://cloud.pguide.studio/hpc')">
-                    <i class="fas fa-cloud-upload-alt"></i> 云计算资源调度中心
                 </div>
             </div>
             <!-- <p><span class="gradient-text">PGuide Studio</span> © 2023-2025</p> -->
